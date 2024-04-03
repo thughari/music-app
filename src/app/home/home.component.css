@@ -1,24 +1,46 @@
-/* Basic styling for the page */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header, main, footer {
+/* General styling */
+main {
+    background-color: #191414; /* Spotify's dark background */
+    color: #fff; /* White text */
     padding: 20px;
   }
   
-  /* Albums section */
+  /* Album sections */
+  .albums {
+    margin-bottom: 30px;
+  }
+  
+  .albums h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Album grid */
   .album-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
     gap: 20px;
   }
   
+  /* Album cards (individual song items) */
+  .album-grid > div {
+    background-color: #282828; /* Slightly lighter background */
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer; /* Make items clickable */
+    transition: background-color 0.2s ease; /* Add hover effect */
+  }
   
-  /* Recent songs section */
-  .song-list {
-    list-style: none;
-    padding: 0;
+  .album-grid > div:hover {
+    background-color: #383838;
+  }
+  
+  .album-grid h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .album-grid p {
+    font-size: 0.9rem;
+    color: #ccc; /* Slightly lighter text for artist and album */
   }
