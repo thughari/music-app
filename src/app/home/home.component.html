@@ -1,27 +1,15 @@
 <app-navbar></app-navbar>
 
-<div *ngFor="let song of songs">
-    <h3>{{ song.title }}</h3>
-    <p>By: {{ song.artist }}</p>
-    <p>Album: {{ song.album }}</p>
-</div>
-  <main>
-
-    <section class="albums">
-      <h2>Featured Albums</h2>
-      <div class="album-grid">
-        <!-- Album cards go here -->
+<main>
+  <section *ngFor="let album of getAlbums()" class="albums">
+    <h2>{{ album }}</h2>
+    <div class="album-grid">
+      <div *ngFor="let song of songsByAlbum[album]">
+        <h3>{{ song.title }}</h3>
+        <p>By: {{ song.artist }}</p>
+        <p>Album: {{ song.album }}</p>
       </div>
-    </section>
+    </div>
+  </section>
+</main>
 
-    <section class="recent-songs">
-      <h2>Recent Songs</h2>
-      <ul class="song-list">
-        <!-- Song list items go here -->
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <!-- Footer content -->
-  </footer>
