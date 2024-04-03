@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #191414; /* Spotify's dark background */
+    color: #fff; /* White text */
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #282828; /* Slightly lighter background for search */
+    padding: 8px 12px;
+    border-radius: 5px;
+  }
+  
+  .search-bar input {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    flex-grow: 1;
+    padding-right: 10px;
+  }
+  
+  .search-bar button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+  }

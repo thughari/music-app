@@ -1,0 +1,24 @@
+/* Basic styling for the page */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, main, footer {
+    padding: 20px;
+  }
+  
+  /* Albums section */
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  
+  /* Recent songs section */
+  .song-list {
+    list-style: none;
+    padding: 0;
+  }
