@@ -1,0 +1,89 @@
+.player-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #181818;
+    /* Spotify's dark background color */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    /* Ensure it stays on top */
+}
+
+.player-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.song-info {
+    display: flex;
+    align-items: center;
+}
+
+.cover-art {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.song-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.controls button i {
+    font-size: 24px;
+    color: #fff;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 0 10px;
+}
+
+.time-elapsed,
+.duration {
+    font-size: 0.8em;
+    color: #fff;
+}
+
+.volume-control button {
+    margin-right: 10px;
+}
+
+.queue-button,
+.device-button,
+.fullscreen-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.queue-button i,
+.device-button i,
+.fullscreen-button i {
+    font-size: 24px;
+    color: #fff;
+}
+

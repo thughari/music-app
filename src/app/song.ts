@@ -5,4 +5,4 @@ export interface Song {
     year: string;
     artist: string;
     musicPath: string;
-}
+  }

@@ -1,0 +1,107 @@
+<div class="player-bar">
+  <div class="song-info">
+    <img [src]="currentSong?.backgroundImage" alt="Album Cover" class="cover-art">
+    <div class="song-details">
+      <span class="song-title">{{ currentSong?.title }}</span>
+      <span class="song-artist">{{ currentSong?.artist }}</span>
+    </div>
+  </div>
+  <div class="controls">
+    <button (click)="toggleShuffle()">
+      <i class="material-icons" [ngClass]="{'active': isShuffled}">shuffle</i>
+    </button>
+    <button (click)="previousSong()">
+      <i class="material-icons">skip_previous</i>
+    </button>
+    <button (click)="togglePlayPause()">
+      <i class="material-icons" [ngClass]="{'active': isPlaying}">
+        {{ isPlaying ? 'pause_circle_filled' : 'play_circle_filled' }}
+      </i>
+    </button>
+    <button (click)="nextSong()">
+      <i class="material-icons">skip_next</i>
+    </button>
+    <button (click)="toggleRepeat()">
+      <i class="material-icons" [ngClass]="{'active': isRepeating}">repeat</i>
+    </button>
+  </div>
+  <div class="progress-bar">
+    <span class="time-elapsed">{{ elapsedTime }}</span>
+    <input type="range" [value]="progress" (input)="seek($event.target)">
+    <span class="duration">{{ duration }}</span>
+  </div>
+  <div class="volume-control">
+    <button (click)="toggleMute()">
+      <i class="material-icons">{{ volumeIcon }}</i>
+    </button>
+    <input type="range" [value]="volume" (input)="volume($event.target)">
+  </div>
+  <button class="queue-button">
+    <i class="material-icons">queue_music</i>
+  </button>
+  <button class="device-button">
+    <i class="material-icons">devices</i>
+  </button>
+  <button class="fullscreen-button">
+    <i class="material-icons">fullscreen</i>
+  </button>
+</div>
+<div id="music-bar">
+    <!--Music Icon-->
+    <div id="music-icon">
+         <img src="Images/latest-release-2.png" alt="music-icon">
+    </div>
+    <!--End of music icon-->
+    <!--Music title-->
+    <div id="music-title">
+        <b>evermore (feat. Bon Iver)</b>
+        <div id="favourite">
+           <i class="far fa-heart" aria-hidden="true"></i>
+        </div>
+        <div id="remove">
+            <i class="fas fa-ban" aria-hidden="true"></i>
+        </div>
+        <br>
+        <!-- <artist>Taylor Swift</artist> -->
+    </div>
+    <!--End of music title-->
+    <!--Play buttons-->
+    <div id="play-buttons">
+        <i class="fas fa-random" aria-hidden="true"></i>
+        <i class="fas fa-backward" aria-hidden="true"></i>
+        <i class="fas fa-pause-circle" aria-hidden="true"></i>
+        <i class="fas fa-forward" aria-hidden="true"></i>
+        <i class="fas fa-undo-alt" aria-hidden="true"></i>
+    </div>
+    <!--End of play buttons-->
+    <!--Music start time-->
+    <div id="start-time">
+        0:00
+    </div>
+    <!--End of music start time-->
+    <!--Music end time-->
+    <div id="end-time">
+        5:04
+    </div>
+    <!--End of music end time-->
+    <!--Begining of the progress bar-->
+    <div id="progress-bar">
+         <div id="circle">
+             <i class="fas fa-circle" aria-hidden="true"></i>
+        </div>
+    </div>
+    <!--End of progress bar-->
+    <!--Miscellaneous icons-->
+    <div id="queue">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+    </div>
+    <div id="volume">
+        <i class="fas fa-volume-up" aria-hidden="true"></i>
+    </div>
+    <div id="progress-bar-volume">
+        <div id="circle-volume">
+          <i class="fas fa-circle" aria-hidden="true"></i>
+        </div>
+    </div>
+    <!--End of miscellaneous icons-->
+</div>

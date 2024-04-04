@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Song } from '../song';
+import { PlaybackService } from '../playback.service';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { Song } from '../song';
 })
 export class HomeComponent implements OnInit {
   songsByAlbum: { [album: string]: Song[] } = {};
+  playbackService: PlaybackService = new PlaybackService;
 
   constructor(private http: HttpClient) {}
 
@@ -27,8 +29,20 @@ export class HomeComponent implements OnInit {
       this.songsByAlbum[song.album].push(song);
     });
   }
-
+  // ... in your song list component
+  playSong(song: any) {
+    this.playbackService.playSong(song);
+  }
   getAlbums(): string[] {
     return Object.keys(this.songsByAlbum);
   }
+
+  getBackgroundImage(album: string): string {
+    const songs = this.songsByAlbum[album];
+    if (songs && songs.length > 0) {
+      return songs[0].backgroundImage; // Assuming the first song of the album represents the album's background image
+    }
+    return ''; // Return empty string if no background image is found
+  }
+  
 }
