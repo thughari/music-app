@@ -11,6 +11,7 @@ import { PlaybackService } from '../playback.service';
 export class HomeComponent implements OnInit {
   songsByAlbum: { [album: string]: Song[] } = {};
   playbackService: PlaybackService = new PlaybackService;
+  currentSong: any;
 
   constructor(private http: HttpClient) {}
 
@@ -32,6 +33,7 @@ export class HomeComponent implements OnInit {
   // ... in your song list component
   playSong(song: any) {
     this.playbackService.playSong(song);
+    this.currentSong=song;
   }
   getAlbums(): string[] {
     return Object.keys(this.songsByAlbum);

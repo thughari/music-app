@@ -4,7 +4,7 @@
   <section *ngFor="let album of getAlbums()" class="albums">
     <h2>{{ album }}</h2>
     <div class="album-grid">
-      <div *ngFor="let song of songsByAlbum[album]" (click)="playSong(song)">
+      <div *ngFor="let song of songsByAlbum[album]" (click)="playSong(song)" style="background-image: url({{song.backgroundImage}});">
         <h3>{{ song.title }}</h3>
         <p>By: {{ song.artist }}</p>
         <p>Album: {{ song.album }}</p>
@@ -12,5 +12,5 @@
     </div>
   </section>
 </main>
-<app-player-bar></app-player-bar>
+<app-player-bar [currentSong]="currentSong"></app-player-bar>
 

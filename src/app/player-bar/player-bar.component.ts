@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-player-bar',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './player-bar.component.css'
 })
 export class PlayerBarComponent {
+  @Input() currentSong : any;
 volumeIcon: any;
 volume: any;
 toggleMute() {
@@ -35,6 +36,5 @@ isShuffled: any;
 toggleShuffle() {
 throw new Error('Method not implemented.');
 }
-currentSong: any;
 
 }
